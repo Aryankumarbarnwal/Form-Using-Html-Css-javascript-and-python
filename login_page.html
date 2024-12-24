@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <form action="signup.php" method="POST"> <!-- Replace with your server-side script -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="class">Class:</label>
+                <input type="text" id="class" name="class" required>
+                
+                <label for="school">School/College Name:</label>
+                <input type="text" id="school" name="school" required>
+                
+                <label for="contact">Email ID/Mobile:</label>
+                <input type="text" id="contact" name="contact" required>
+                
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="password" required>
+                
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+        <div class="form-container">
+            <h2>Login</h2>
+            <form action="login.php" method="POST"> <!-- Replace with your server-side script -->
+                <label for="login-contact">Email ID/Mobile:</label>
+                <input type="text" id="login-contact" name="contact" required>
+                
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+            <div class="links">
+                <a href="forgot_user_id.php">Forgot User ID?</a> | 
+                <a href="forgot_password.php">Forgot Password?</a>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

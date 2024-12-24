@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Student Profile</title>
+    <link rel="stylesheet" href="student_profile.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Create Your Student Profile</h2>
+        <form id="student-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="current-school">Current School/College Name:</label>
+            <input type="text" id="current-school" placeholder="Enter current school/college" required>
+
+            <label for="previous-schools">Previous Schools/Colleges:</label>
+            <textarea id="previous-schools" placeholder="Enter previous schools/colleges, separated by commas"></textarea>
+
+            <label for="interests">Interests:</label>
+            <textarea id="interests" placeholder="Enter interests, separated by commas"></textarea>
+
+            <label for="projects">School Projects:</label>
+            <textarea id="projects" placeholder="Enter school projects, separated by commas"></textarea>
+
+            <label for="achievements">Achievements:</label>
+            <textarea id="achievements" placeholder="Enter achievements, separated by commas"></textarea>
+
+            <label for="photo-upload">Add/Change Photo:</label>
+            <input type="file" id="photo-upload" accept="image/*" required>
+
+            <label for="contact">Contact Information:</label>
+            <input type="text" id="contact" placeholder="Enter contact information" required>
+
+            <button type="submit">Create Profile</button>
+        </form>
+    </div>
+
+    <div id="profile-container" class="profile-container" style="display: none;">
+        <h2>Student Profile</h2>
+        <div class="profile-photo">
+            <img id="profile-photo" alt="Student Photo">
+        </div>
+        <div class="profile-info">
+            <p><strong>Name:</strong> <span id="profile-name"></span></p>
+            <p><strong>Current School/College:</strong> <span id="profile-current-school"></span></p>
+            <p><strong>Previous Schools/Colleges:</strong></p>
+            <ul id="profile-previous-schools"></ul>
+            <p><strong>Interests:</strong></p>
+            <ul id="profile-interests"></ul>
+            <p><strong>School Projects:</strong></p>
+            <ul id="profile-projects"></ul>
+            <p><strong>Achievements:</strong></p>
+            <ul id="profile-achievements"></ul>
+            <p><strong>Contact Information:</strong> <span id="profile-contact"></span></p>
+        </div>
+        <button id="edit-profile">Edit Profile</button>
+    </div>
+
+    <script src="student_profile.js"></script>
+</body>
+</html>

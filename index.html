@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Management</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <!-- Toggle Buttons -->
+        <div class="toggle-buttons">
+            <button class="toggle-button" data-target="auth-section">Login/Sign Up</button>
+            <button class="toggle-button" data-target="student-profile-form-container">Student Profile</button>
+            <button class="toggle-button" data-target="teacher-profile-form-container">Teacher Profile</button>
+            <button class="toggle-button" data-target="school-profile-form-container">School Profile</button>
+        </div>
+
+        <!-- Login & Sign Up Section -->
+        <div class="auth-section">
+            <div class="form-container" id="signup-container">
+                <h2>Sign Up</h2>
+                <form id="signup-form">
+                    <label for="signup-name">Name:</label>
+                    <input type="text" id="signup-name" name="name" placeholder="Enter your name" required>
+                    
+                    <label for="signup-class">Class:</label>
+                    <input type="text" id="signup-class" name="class" placeholder="Enter your class" required>
+                    
+                    <label for="signup-school">School/College Name:</label>
+                    <input type="text" id="signup-school" name="school" placeholder="Enter your school/college name" required>
+                    
+                    <label for="signup-contact">Email ID/Mobile:</label>
+                    <input type="text" id="signup-contact" name="contact" placeholder="Enter your email or mobile number" required>
+                    
+                    <label for="signup-password">Password:</label>
+                    <input type="password" id="signup-password" name="password" placeholder="Enter your password" required>
+                    
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+
+            <div class="form-container" id="login-container">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <label for="login-contact">Email ID/Mobile:</label>
+                    <input type="text" id="login-contact" name="contact" placeholder="Enter your email or mobile number" required>
+                    
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+                    
+                    <button type="submit">Login</button>
+                </form>
+                <div class="links">
+                    <a href="forgot_user_id.php">Forgot User ID?</a> | 
+                    <a href="forgot_password.php">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <!-- Student Profile -->
+            <div class="form-container" id="student-profile-form-container">
+                <h2>Create Student Profile</h2>
+                <form id="student-profile-form">
+                    <label for="student-name">Name:</label>
+                    <input type="text" id="student-name" name="name" placeholder="Enter student name" required>
+
+                    <label for="student-current-school">Current School/College Name:</label>
+                    <input type="text" id="student-current-school" name="current_school" placeholder="Enter current school/college name" required>
+
+                    <label for="student-previous-school1">Previous School/College Name1:</label>
+                    <input type="text" id="student-previous-school1" name="previous_school1" placeholder="Enter previous school/college name">
+
+                    <label for="student-previous-school2">Previous School/College Name2:</label>
+                    <input type="text" id="student-previous-school2" name="previous_school2" placeholder="Enter previous school/college name">
+
+                    <label for="student-interest">Interest:</label>
+                    <input type="text" id="student-interest" name="interest" placeholder="Enter your interests" required>
+
+                    <label for="student-project">School Project:</label>
+                    <input type="text" id="student-project" name="project" placeholder="Enter school project details" required>
+
+                    <label for="student-achievement">Achievement:</label>
+                    <input type="text" id="student-achievement" name="achievement" placeholder="Enter your achievements" required>
+
+                    <label for="student-photo">Add Photo/Change Photo:</label>
+                    <input type="file" id="student-photo" name="photo" accept="image/*">
+
+                    <label for="student-contact">Contact Information:</label>
+                    <input type="text" id="student-contact" name="contact" placeholder="Enter contact information" required>
+
+                    <button type="submit">Create Student Profile</button>
+                </form>
+            </div>
+
+            <div id="student-profile-container" class="profile-container" style="display: none;">
+                <h2>Student Profile</h2>
+                <div class="profile-info">
+                    <div class="profile-photo">
+                        <img id="student-profile-photo" src="" alt="Student Photo" style="display: none;">
+                    </div>
+                    <p><strong>Name:</strong> <span id="student-profile-name"></span></p>
+                    <p><strong>Current School/College:</strong> <span id="student-profile-current-school"></span></p>
+                    <p><strong>Previous Schools/Colleges:</strong> <span id="student-profile-previous-schools"></span></p>
+                    <p><strong>Interest:</strong> <span id="student-profile-interest"></span></p>
+                    <p><strong>School Projects:</strong> <span id="student-profile-projects"></span></p>
+                    <p><strong>Achievements:</strong> <span id="student-profile-achievements"></span></p>
+                    <p><strong>Contact Information:</strong> <span id="student-profile-contact"></span></p>
+                </div>
+                <button id="edit-student-profile">Edit Profile</button>
+            </div>
+
+            <!-- Teacher/Coach/Tutor/Mentor Profile -->
+            <div class="form-container" id="teacher-profile-form-container">
+                <h2>Create Teacher/Coach/Tutor/Mentor Profile</h2>
+                <form id="teacher-profile-form">
+                    <label for="teacher-name">Name:</label>
+                    <input type="text" id="teacher-name" name="name" placeholder="Enter name" required>
+
+                    <label for="teacher-specialty">Specialty:</label>
+                    <input type="text" id="teacher-specialty" name="specialty" placeholder="Enter your specialty" required>
+
+                    <label for="teacher-description">Description:</label>
+                    <textarea id="teacher-description" name="description" placeholder="Enter a description" required></textarea>
+
+                    <label for="teacher-org-name">Org Name/Current Engagement:</label>
+                    <input type="text" id="teacher-org-name" name="org_name" placeholder="Enter organization name or current engagement" required>
+
+                    <label for="teacher-certificate">Certificate:</label>
+                    <input type="text" id="teacher-certificate" name="certificate" placeholder="Enter certificate details" required>
+
+                    <label for="teacher-education">Education:</label>
+                    <textarea id="teacher-education" name="education" placeholder="Enter educational background" required></textarea>
+
+                    <label for="teacher-experience">Experience:</label>
+                    <textarea id="teacher-experience" name="experience" placeholder="Enter your experience" required></textarea>
+
+                    <label for="teacher-contact">Contact Information:</label>
+                    <input type="text" id="teacher-contact" name="contact" placeholder="Enter contact information" required>
+
+                    <button type="submit">Create Teacher/Coach/Tutor/Mentor Profile</button>
+                </form>
+            </div>
+
+            <div id="teacher-profile-container" class="profile-container" style="display: none;">
+                <h2>Teacher/Coach/Tutor/Mentor Profile</h2>
+                <div class="profile-info">
+                    <p><strong>Name:</strong> <span id="teacher-profile-name"></span></p>
+                    <p><strong>Specialty:</strong> <span id="teacher-profile-specialty"></span></p>
+                    <p><strong>Description:</strong> <span id="teacher-profile-description"></span></p>
+                    <p><strong>Org Name/Current Engagement:</strong> <span id="teacher-profile-org-name"></span></p>
+                    <p><strong>Certificate:</strong> <span id="teacher-profile-certificate"></span></p>
+                    <p><strong>Education:</strong></p>
+                    <ul id="teacher-profile-education"></ul>
+                    <p><strong>Experience:</strong></p>
+                    <ul id="teacher-profile-experience"></ul>
+                    <p><strong>Contact Information:</strong> <span id="teacher-profile-contact"></span></p>
+                </div>
+                <button id="edit-teacher-profile">Edit Profile</button>
+            </div>
+
+            <!-- School/Institution Profile -->
+            <div class="form-container" id="school-profile-form-container">
+                <h2>Create School/Institution Profile</h2>
+                <form id="school-profile-form">
+                    <label for="school-name">Name:</label>
+                    <input type="text" id="school-name" name="name" placeholder="Enter school/institution name" required>
+
+                    <label for="school-about">About:</label>
+                    <textarea id="school-about" name="about" placeholder="Enter a brief about the school/institution" required></textarea>
+
+                    <label for="school-contact">Contact:</label>
+                    <input type="text" id="school-contact" name="contact" placeholder="Enter contact information" required>
+
+                    <label for="school-affiliation">Board/University Affiliation:</label>
+                    <input type="text" id="school-affiliation" name="affiliation" placeholder="Enter board/university affiliation" required>
+
+                    <label for="school-achievement">Achievements:</label>
+                    <input type="text" id="school-achievement" name="achievement" placeholder="Enter achievements" required>
+
+                    <button type="submit">Create School/Institution Profile</button>
+                </form>
+            </div>
+
+            <div id="school-profile-container" class="profile-container" style="display: none;">
+                <h2>School/Institution Profile</h2>
+                <div class="profile-info">
+                    <p><strong>Name:</strong> <span id="school-profile-name"></span></p>
+                    <p><strong>About:</strong> <span id="school-profile-about"></span></p>
+                    <p><strong>Contact Information:</strong> <span id="school-profile-contact"></span></p>
+                    <p><strong>Board/University Affiliation:</strong> <span id="school-profile-affiliation"></span></p>
+                    <p><strong>Achievements:</strong> <span id="school-profile-achievements"></span></p>
+                </div>
+                <button id="edit-school-profile">Edit Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
